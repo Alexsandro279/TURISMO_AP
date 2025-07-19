@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Turismo Incrível</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    /* Navbar */
+    header {
+      background-color: #000000;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section com imagem de fundo */
+    .hero {
+      position: relative;
+      background-image: url('/fotos/unnamed.webp'); /* Substitua aqui pela sua imagem */
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
+    }
+
+    .hero-content {
+      position: relative;
+      color: white;
+      z-index: 1;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: white;
+      color: #007BFF;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Galeria */
+    .galeria {
+      display: none;
+      padding: 60px 40px;
+      background-color: #f7f7f7;
+    }
+
+    .galeria h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2em;
+      color: #007BFF;
+    }
+
+    .fotos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .fotos img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #000000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .informacoes {
+  padding: 60px 40px;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.informacoes h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2em;
+  color: #007BFF;
+}
+
+.ponto {
+  margin-bottom: 30px;
+}
+
+.ponto h3 {
+  font-size: 1.4em;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.ponto p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">AP TURISMO</div>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Destinos</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+      <a href="/index.html">Login</a>
+    </nav>
+  </header>
+
+  <!-- Seção principal -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Descubra os melhores pontos turisticos de Macapá</h1>
+      <p>Conheça Macapá,natureza, cultura e emoção em cada passo da sua viagem!.</p>
+      <button class="btn" onclick="mostrarGaleria()">Ver Fotos</button>
+    </div>
+  </section>
+
+  <!-- Galeria de Fotos (oculta até clicar) -->
+  <section id="galeria" class="galeria">
+    <h2>Galeria de Destinos</h2>
+    <div class="fotos">
+      <!-- Substitua pelos seus arquivos -->
+      <img src="/fotos/imgap.jpg" alt="Imagem 1">
+      <img src="/fotos/images.jpg" alt="Imagem 2">
+      <img src="/fotos/transferir.jpg" alt="Imagem 3">
+      <img src="/fotos/hort.jpg" alt="Imagem 4">
+      <img src="/fotos/Orla_de_Macapá,_Amapá.jpg" alt="Imagem 5">
+      <img src="/fotos/trapiche-eliezer-levy.jpg" alt="Imagem 5">
+      <img src="/fotos/ap.jpg" alt="Imagem 5">
+      <img src="/fotos/mu.jpg" alt="Imagem 6">
+    </div>
+  </section>
+<!-- Informações sobre os pontos turísticos -->
+<section class="informacoes">
+  <h2>Conheça mais sobre os pontos turísticos</h2>
+  <div class="ponto">
+    <h3>1. Fortaleza de São José</h3>
+    <p>A Fortaleza de São José é um dos principais pontos turísticos de Macapá e parada obrigatória para quem visita a cidade. Localizada às margens do imenso Rio Amazonas, ela encanta turistas com sua arquitetura histórica, seu valor cultural e uma vista deslumbrante.
+
+Construída no século XVIII, a fortaleza preserva elementos da época colonial e oferece aos visitantes a chance de explorar suas muralhas, canhões e espaços internos que contam parte da história do Amapá. O local também é palco de eventos culturais e apresentações, tornando a visita ainda mais especial.
+
+Além da imersão histórica, a Fortaleza proporciona um dos pôr do sol mais bonitos da cidade, sendo perfeita para passeios em família, fotografias e momentos de tranquilidade.
+
+Se você está em Macapá, não deixe de conhecer esse ícone da cidade — um lugar onde história, natureza e cultura se encontram.</p>
+  </div>
+
+  <div class="ponto">
+    <h3>2. Marco Zero</h3>
+      <p>O Marco Zero é um dos pontos turísticos mais famosos e emblemáticos de Macapá. Localizado exatamente sobre a linha imaginária do Equador, o local permite uma experiência única: ficar com um pé no Hemisfério Norte e o outro no Hemisfério Sul!
+
+O espaço conta com um obelisco moderno com um grande anel metálico no topo, que marca o ponto exato por onde o Sol passa durante o equinócio — fenômeno em que o dia e a noite têm a mesma duração. Além disso, o local abriga um pequeno museu e uma área de lazer para visitantes.
+
+O Marco Zero é perfeito para quem gosta de ciência, geografia e experiências curiosas. Também é um dos cenários mais procurados para fotografias e registros de viagens.
+
+Visitar o Marco Zero é conhecer um dos raros lugares do mundo onde se pode literalmente estar nos dois hemisférios ao mesmo tempo. Uma parada imperdível em Macapá!
+
+</p>
+  </div>
+
+  <div class="ponto">
+    <h3>3. Orla do Rio Amazonas</h3>
+    <p>A Orla do Rio Amazonas, em Macapá, é um dos lugares mais encantadores da cidade. Com uma vista privilegiada para o maior rio do mundo, o local é perfeito para passeios ao ar livre, caminhadas ao entardecer, prática de exercícios físicos ou simplesmente para relaxar admirando a paisagem.
+
+Durante o pôr do sol, a orla se transforma em um cenário inesquecível: o céu se pinta de tons dourados e alaranjados, refletindo nas águas do rio e criando uma atmosfera mágica. É o ponto ideal para fotos incríveis e momentos de contemplação.
+
+A orla também conta com bares, quiosques e o famoso Trapiche Eliezer Levy, que avança sobre o rio e oferece uma visão panorâmica deslumbrante.
+
+Se você busca tranquilidade, beleza natural e um contato direto com a grandiosidade do Rio Amazonas, a orla de Macapá é o lugar certo para incluir no seu roteiro.</p>
+  </div>
+
+  <div class="ponto">
+    <h3>4. Museu Sacaca</h3>
+    <p>O Museu Sacaca é um dos espaços mais ricos e interessantes de Macapá para quem deseja conhecer a cultura, a ciência e os modos de vida amazônicos. Ao ar livre e rodeado pela natureza, o museu apresenta uma proposta única: unir conhecimento científico com os saberes tradicionais dos povos da Amazônia.
+
+O local possui trilhas ecológicas, casas indígenas, barcos ribeirinhos, exposições interativas e ambientes que simulam o cotidiano das comunidades amazônicas. Uma das grandes atrações é a reprodução de uma maloca indígena e a tradicional casinha do benzedor, que homenageia o curandeiro Sacaca, figura popular da medicina tradicional amapaense.
+
+O museu é educativo, acessível e envolvente, ideal para todas as idades.
+
+Visitar o Museu Sacaca é mergulhar na essência do Amapá — um espaço que valoriza a biodiversidade, a cultura e o saber popular da floresta.</p>
+  </div>
+
+  <div class="ponto">
+    <h3>5. Trapiche Eliezer Levy</h3>
+    <p>O Trapiche Eliezer Levy é um dos cartões-postais mais encantadores de Macapá. Com mais de 400 metros de extensão, esse píer sobre o Rio Amazonas proporciona uma vista panorâmica impressionante do rio e da cidade.
+
+Além de caminhar por toda sua extensão, os visitantes também podem andar no tradicional bondinho vermelho, que percorre o trapiche até o final da estrutura. O local é excelente para curtir o fim de tarde, sentir a brisa amazônica e registrar fotos incríveis, especialmente durante o pôr do sol.
+
+À noite, o trapiche ganha uma iluminação especial e se torna um ponto romântico e tranquilo para passeios.
+
+O Trapiche Eliezer Levy é um convite para desacelerar e se conectar com a natureza e a beleza única da capital amapaense.
+
+</p>
+  </div>
+</section>
+
+  <!-- Rodapé -->
+  <footer>
+    &copy; 2025 Ap Turismo. Todos os direitos reservados.
+  </footer>
+
+  <!-- JavaScript puro -->
+  <script>
+    function mostrarGaleria() {
+      const galeria = document.getElementById('galeria');
+      galeria.style.display = 'block';
+      galeria.scrollIntoView({ behavior: 'smooth' });
+    }
+    function mostrarponto() {
+      const ponto = document.getElementById('ponto');
+      ponto.style.display = 'block';
+      ponto.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
